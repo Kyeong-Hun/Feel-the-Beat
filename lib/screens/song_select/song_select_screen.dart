@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../gameplay/gameplay_screen.dart';
 
 class SongSelectScreen extends StatelessWidget {
   const SongSelectScreen({super.key});
@@ -14,7 +15,7 @@ class SongSelectScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'No songs yet',
+              'Practice Song',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -22,7 +23,19 @@ class SongSelectScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Your songs will appear here.',
+              'A test song for development.',
+            ),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const GameplayScreen(),
+                  ),
+                );
+              },
+              child: const Text('PLAY'),
             ),
             const SizedBox(height: 32),
             ElevatedButton(
